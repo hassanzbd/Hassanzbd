@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Transport Manager – Menu</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; background:#f7f8fc; color:#0f172a; }
+    header { background:#111827; color:#fff; padding:18px 16px; box-shadow:0 6px 16px rgba(0,0,0,.15) }
+    h1 { margin:0; font-size:18px }
+    main { max-width:1200px; margin:24px auto; padding:0 16px }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px }
+    a.card { display:block; background:#fff; border:1px solid #ebedf3; border-radius:16px; padding:16px 14px; text-decoration:none; color:#0f172a; box-shadow:0 8px 18px rgba(17,24,39,.05) }
+    .card h3 { margin:0 0 6px; font-size:16px }
+    .card p { margin:0; color:#334155; font-size:13px }
+    .badge { display:inline-block; margin-top:8px; padding:4px 8px; border-radius:999px; color:#fff; font-size:12px }
+    .b1{background:#2563eb}.b2{background:#0ea5e9}.b3{background:#10b981}.b4{background:#f59e0b}
+    .b5{background:#7c3aed}.b6{background:#ef4444}.b7{background:#a855f7}.b8{background:#6b7280}
+  </style>
+
+  <!-- Compatibility fixes -->
+  <script>
+  (function(){
+    if(!window.crypto){ window.crypto = {}; }
+    if(!window.crypto.randomUUID){
+      window.crypto.randomUUID = function(){
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
+          var r=Math.random()*16|0, v=c=='x'?r:(r&0x3|0x8);
+          return v.toString(16);
+        });
+      };
+    }
+    window.addEventListener('error', function(e){
+      try{
+        var div=document.getElementById('compat-error-banner');
+        if(!div){
+          div=document.createElement('div');
+          div.id='compat-error-banner';
+          div.style.cssText='position:fixed;left:8px;right:8px;bottom:8px;background:#fee2e2;color:#991b1b;border:1px solid #fecaca;padding:10px 12px;border-radius:10px;font-size:14px;z-index:99999;';
+          document.body.appendChild(div);
+        }
+        div.textContent='Erreur: '+(e.message||'inconnue')+' — rechargez la page.';
+      }catch(_){}
+    });
+  })();
+  </script>
+</head>
+<body>
+<header><h1>🚚 Transport Manager — Choisissez une section</h1></header>
+<main>
+  <div class="grid">
+    <a class="card" href="dashboard.html"><h3>Tableau de bord</h3><p>Cash, KPIs, Profit par camion</p><span class="badge b1">Start</span></a>
+    <a class="card" href="trucks.html"><h3>Camions</h3><p>Ajouter / Modifier / Supprimer (photos)</p><span class="badge b2">Flotte</span></a>
+    <a class="card" href="clients.html"><h3>Clients</h3><p>Soldes & crédit</p><span class="badge b3">CRM</span></a>
+    <a class="card" href="suppliers.html"><h3>Fournisseurs</h3><p>Balances & achats</p><span class="badge b4">Vendeurs</span></a>
+    <a class="card" href="trips.html"><h3>Voyages</h3><p>Frais, paiement client/crédit, photos</p><span class="badge b5">Opérations</span></a>
+    <a class="card" href="expenses.html"><h3>Dépenses</h3><p>Catégorie, note, photo</p><span class="badge b6">Coûts</span></a>
+    <a class="card" href="payments.html"><h3>Paiements</h3><p>Client / Fournisseur, photo</p><span class="badge b7">Trésorerie</span></a>
+    <a class="card" href="statements.html"><h3>Relevés</h3><p>Clients, Fournisseurs, Cash, Dépenses</p><span class="badge b8">Rapports</span></a>
+  </div>
+</main>
+</body>
+</html>
